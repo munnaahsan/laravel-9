@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {
-        dd($request);
+//        dd($request);
         return view('admin.index');
     }
 }
