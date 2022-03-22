@@ -2,41 +2,29 @@
     <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex justify-end p-2">
-                    <a href="{{ route('admin.roles.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 rounded-md">Create Role</a>
+                <div class="flex sm:justify-end p-2">
+                    <a href="{{ route('admin.roles.index') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 rounded-md">Role Index</a>
                 </div>
-                <div class="flex flex-col">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                <table class="min-w-full divide-y divide-gray-200">
-                                    <thead class="bg-gray-50">
-                                        <tr>
-                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Name</th>
-                                            <th scope="col" class="relative px-6 py-3">
-                                                <span class="sr-only">Edit</span>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200">
-                                        @foreach($roles as $role)
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <div class="flex items-center">
-                                                        {{ $role->name }}
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <a href="{{ route('admin.roles.edit', $role->id) }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Edit</a>
-                                                    <a href="" class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md">Delete</a>
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                <div class="flex flex-col ml-4">
+                    <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
+                        <form method="POST" action="{{ route('admin.roles.update', $role) }}">
+                            @csrf
+                            @method('PUT')
+                            <div class="sm:col-span-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700"> Post Name </label>
+                                <div class="mt-1">
+                                    <input type="text"
+                                           id="name"
+                                           name="name"
+                                           value="{{$role->name}}"
+                                           class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('name') <span class="error text-red-400 text-sm mt-2">{{ $message }}</span> @enderror
                             </div>
-                        </div>
+                            <div class="sm:col-span-6 pt-5">
+                                <button type="submit" class="px-4 py-2 bg-green-400 rounded-md hover:bg-green-600">Update</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

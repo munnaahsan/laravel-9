@@ -27,8 +27,8 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="">Edit</a>
-                                                    <a href="">Delete</a>
+                                                    <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="{{ route('admin.roles.edit', $role->id) }}">Edit</a>
+                                                    <a href="" class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
