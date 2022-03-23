@@ -5,7 +5,7 @@
                 <div class="flex justify-end p-2">
                     <a href="{{ route('admin.roles.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 rounded-md">Create Role</a>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col p-2 bg-slate-100">
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -28,7 +28,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="flex justify-end">
-                                                        <div class="flex space-x-2">
+                                                        <div class="flex space-x-2 bg-slate-100">
                                                             <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="{{ route('admin.roles.edit', $role->id) }}">Edit</a>
                                                             <form class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md" onsubmit="return confirm('Are You Sure...?');" method="POST" action="{{ route('admin.roles.destroy', $role->id) }} ">
                                                                 @csrf

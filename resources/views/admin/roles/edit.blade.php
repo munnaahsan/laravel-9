@@ -5,7 +5,7 @@
                 <div class="flex sm:justify-end p-2">
                     <a href="{{ route('admin.roles.index') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 rounded-md">Role Index</a>
                 </div>
-                <div class="flex flex-col ml-4">
+                <div class="flex flex-col p-2 bg-slate-100">
                     <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
                         <form method="POST" action="{{ route('admin.roles.update', $role) }}">
                             @csrf
@@ -27,7 +27,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="mt-6 p-2">
+                <div class="mt-6 p-2 bg-slate-100">
                     <h2 class="font-semibold text-2xl">Role Permission</h2>
                     <div class="p-2 flex space-x-2 mb-6">
                         @if($role->permissions)
