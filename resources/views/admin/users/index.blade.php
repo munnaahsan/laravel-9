@@ -32,8 +32,8 @@
                                             <td>
                                                 <div class="flex justify-end">
                                                     <div class="flex space-x-2 bg-slate-100">
-                                                        <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="">Roles</a>
-                                                        <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="">Permission</a>
+                                                        <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="{{ route('admin.users.show', $user->id) }}">Roles</a>
+{{--                                                        <a class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md" href="">Permission</a>--}}
                                                         <form
                                                             method="POST"
                                                             action="{{ route('admin.users.destroy', $user->id) }} "
